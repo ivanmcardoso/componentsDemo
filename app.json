@@ -1,0 +1,12 @@
+{
+  "name": "calendarTest",
+  "displayName": "calendarTest",
+  "expo": {
+    "name": "calendarTest",
+    "slug": "calendarTest",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
