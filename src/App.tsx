@@ -4,6 +4,7 @@ import { Calendar, CalendarList, Agenda, DateObject } from "react-native-calenda
 import { Container } from "./styles";
 import { LocaleConfig } from "react-native-calendars";
 import CalendarModal from "./component/CalendarModal";
+import TimePickerModal from "./component/TimePickerModal";
 
 LocaleConfig.locales["pt"] = {
   formatAccessibilityLabel: "dddd d 'of' MMMM 'of' yyyy",
@@ -51,6 +52,7 @@ LocaleConfig.defaultLocale = "pt";
 
 export default function App() {
   const [showCalendarModal, setShowCalendarModal] = useState(false);
+  const [showTimerModal, setShowTimerModal] = useState(false);
   const [selectedDate, setSelectedDate] = useState(new Date())
 
   function openCalendarModal() {
@@ -59,6 +61,14 @@ export default function App() {
 
   function closeCalendarModal() {
     setShowCalendarModal(false);
+  }
+
+  function openTimerModal() {
+    setShowTimerModal(true);
+  }
+
+  function closeTimerModal() {
+    setShowTimerModal(false);
   }
 
   function selectDate(day: DateObject) {
@@ -76,6 +86,13 @@ export default function App() {
         visible={showCalendarModal}
         closeModal={closeCalendarModal}
         onDayPress={selectDate}
+      />
+       <Button onPress={openTimerModal} title="Time"/>
+      <Text>{"data"}</Text>
+      <TimePickerModal
+        visible={showTimerModal}
+        closeModal={closeTimerModal}
+        
       />
     </Container>
   );

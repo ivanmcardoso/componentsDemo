@@ -8,6 +8,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@gregfrench/react-native-wheel-picker": "^1.2.9",
     "@types/react-native-calendars": "^1.505.0",
     "@types/styled-components": "^5.1.5",
     "expo": "~40.0.0",
